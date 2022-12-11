@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>SiteSurf</title>
+   <link rel="icon" href='img/ssicon.png'>
+        <style>
+            body{
+                background-color: rgb(20, 20, 20);
+                cursor:url("http://www.rw-designer.com/cursor-extern.php?id=182965"), default;
+            }
+            button{
+                font-family: Verdana, sans-serif;
+                background-color: transparent;
+                border: 3px solid white;
+                color:white;
+                cursor:url("http://www.rw-designer.com/cursor-extern.php?id=182969"), default;
+                width: 10%;
+                height: 30px;
+                z-index: 1;
+                transition: all 0.3s ease;
+                transform: scale(1);
+            }
+            button:hover{
+                font-family: Verdana, sans-serif;
+                background-color: transparent;
+                border: 3.2px solid white;
+                color:white;
+                cursor:url("http://www.rw-designer.com/cursor-extern.php?id=182969"), default;
+                width: 11%;
+                height: 30px;
+                z-index: 1;
+                transform: scale(1.05) perspective(10px);
+            }
+            h1{
+                font-family: Verdana, sans-serif;
+                color:white;
+                background-color: transparent;
+                margin-top: 10%;
+                z-index: 1;
+            }
+            h3{
+                font-family: Verdana, sans-serif;
+                color:white;
+                background-color: transparent;
+                margin-top: 2%; 
+                z-index: 1;
+            }
+            h5{
+                font-family: Verdana, sans-serif;
+                color:white;
+                background-color: transparent;
+                margin-top: 2%;
+                z-index: 1; 
+            }
+            marquee{
+                font-family: Verdana, sans-serif;
+                color:white;
+                background-color: transparent;
+                margin-top: 2%;
+                z-index: 1; 
+            }
+            input{
+                font-family: Verdana, sans-serif;
+                background-color: transparent;
+                color:white;
+                border: 3px solid white;
+                width: 30%;
+                height: 30px;
+                z-index: 20;
+                transition: all 0.3s ease;
+                transform: scale(1);
+                cursor:url("http://www.rw-designer.com/cursor-extern.php?id=182970"), default;
+            }
+            input:focus{
+                font-family: Verdana, sans-serif;
+                background-color: transparent;
+                color:white;
+                border: 3px solid white;
+                width: 30%;
+                height: 30px;
+                z-index: 20;
+                transform: scale(1.05) perspective(10px);
+                cursor:url("http://www.rw-designer.com/cursor-extern.php?id=182970"), default;
+            }
+            /*.trail {className for the trail elements
+    position: absolute;
+    height: 3px; width: 3px;
+    border-radius: 3px;
+    background: white;
+  }
+
+            
+            @keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveTop {
+    animation: move_wave 20s linear infinite;
+}
+.waveMiddle {
+    background-size: 100% 240px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 30s linear infinite;
+}*/
+        </style>
+    <body>
+        <!--<div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgTop">
+                <div class="wave waveTop" style="background-image: url('img/wave-top.png')"></div>
+              </div>
+            <div class="waveWrapperInner bgBottom">
+              <div class="wave waveBottom" style="background-image: url('img/wave-bot.png')"></div>
+            </div>
+          </div>-->
+        <center>
+            <marquee direction="left">This site was created by AlexDingleberries.</marquee>
+        <h1>Welcome to SiteSurf.</h1>
+        <br>
+        <h3>This is the launcher page for the application.</h3> 
+        <br><br><br>
+        <input type="text" id="page" placeholder="Type/Paste Redirection Page (remember to include: 'https://')">
+        <br><br><br>
+        <button onclick="openWin()">Launch SiteSurf</button>
+        <br><br>
+        <button onclick="kill()">Kill Tab</button>
+        <br>
+        <h5>The kill tab button will automatically redirect to google and remove this page from your history.</h5>
+        <br><br>
+    <script>
+            function openWin() {
+            var win = window.open()
+            var iframe = win.document.createElement('iframe')
+            var redirect = document.getElementById("page").value
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.setAttribute("src", 'pages/filex.html');
+            win.document.body.appendChild(iframe)
+            win.document.body.style.margin = '0';
+            window.location.replace(redirect)
+            }
+            function kill() {
+                window.location.replace("https://google.com")
+            }
+    </script>
+    </center>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src='scripts/cursor.js'></script>
+    <!--<script src='scripts/rightclick.js'></script>-->
+    </body>  
+</head>
+</html>
